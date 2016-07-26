@@ -1,0 +1,12 @@
+<h1>Post#edit</h1>
+<p>Find me in app/views/post/edit.html.erb</p>
+<%= form_for(@post, url: patch_post_path) do |f| %>
+<div class="field">
+  <%= f.label :info %><br>
+  <%= f.text_field :info %>
+</div>
+<div class="actions">
+    <%= f.submit "submit!" %>
+</div>
+<% end %>
+<%= link_to "List", show_journal_path(@post.journal_id)%>

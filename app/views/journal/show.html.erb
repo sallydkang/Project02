@@ -1,0 +1,15 @@
+<h1>Journal#show</h1>
+<p>Find me in app/views/journal/show.html.erb</p>
+<p>
+  <strong>Name: <%= @journal.name %></strong>
+  <% @post.each do |post| %>
+  <ul>
+    <li><%= post.info %></li>
+    <tr><%= link_to "Edit", edit_post_path(post) %></tr>
+    <tr><%= link_to "DELETE", destroy_post_path(post), method: :delete, data: { confirm: "Are you sure?"} %></tr>
+  </ul>
+  <%end%>
+</p>
+<%= link_to "Edit", edit_journal_path(@journal) %>
+<%= link_to "List", journal_path%>
+<%= link_to "Add post", new_post_path(@journal) %>

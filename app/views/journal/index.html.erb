@@ -1,0 +1,85 @@
+<div class="container-fluid">
+  <div class="row" id="maintop">
+    <div class="col-xs-6 col-sm-4 col-md-2">
+      <!-- <img id="avatar" src="<%= asset_path( 'kitty.jpeg' ) %>"/> -->
+    </div>
+    <div class="col-md-5">
+      <h3 class="text-center" style="margin-left: 300px; margin-top: 50px;">ACTIONS</h3>
+    </div>
+  </div>
+<div class="row" id="mainbottom">
+  <div class="col-xs-12 col-sm-12 col-md-5">
+    <div class="container-fluid" style="margin-left: 50px;">
+      <div class="page-header">
+        <h3 id="timeline">My Journals</h3>
+      </div>
+      <ul class="timeline">
+      <% @journal.each do |journal| %>
+        <li class="timeline-inverted">
+          <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i>
+          </div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"><strong>Title: </strong><%= link_to journal.name, show_journal_path(journal)  %></h4>
+            </div>
+            <div class="timeline-body">
+              <p>Created at: <%= journal.created_at %></p><br/>
+              <p>
+                <%= link_to "DELETE", destroy_journal_path(journal), method: :delete, data: { confirm: "Are you sure?"} %>
+              </p>
+            </div>
+          </div>
+        </li>
+      <%end%>
+    </ul>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="padding-right: 0px;">
+    <div class="hovereffect">
+      <img class="img-responsive" src="http://placekitten.com/500/300" alt="">
+      something
+        <div class="overlay">
+          <h2></h2>
+          <p class="text-center" style="font-size: 20px;">
+            <a href="/journal/new"><strong>Add new journal!</strong></a>
+          </p>
+        </div>
+      </div>
+      <ul class="caption-style-1">
+        <li> <img src="http://placekitten.com/304/383"  alt="">
+          <div class="caption">
+            <div class="blur" style="height: 383px; width: 304px;"></div>
+            <div class="caption-text">
+              <h1>Amazing Caption</h1>
+              <p>Whatever It Is - Always Awesome</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-3" style="padding-left: 0px;">
+      <ul class="caption-style-1">
+        <li> <img src="http://placekitten.com/375/400"  alt="">
+          <div class="caption">
+            <div class="blur" style="height: 400px; width: 375px;"></div>
+            <div class="caption-text">
+              <h1>Amazing Caption</h1>
+              <p>Whatever It Is - Always Awesome</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <ul class="caption-style-1">
+        <li> <img src="http://placekitten.com/375/200"  alt="">
+          <div class="caption">
+            <div class="blur" style="height: 200px; width: 375px;"></div>
+            <div class="caption-text">
+              <h1>Amazing Caption</h1>
+              <p>Whatever It Is - Always Awesome</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
