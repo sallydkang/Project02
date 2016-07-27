@@ -2,6 +2,10 @@
 <p>Find me in app/views/post/new.html.erb</p>
 <%= form_for(@post, url: create_post_path) do |f| %>
 <div class="field">
+  <%= f.label :title %><br>
+  <%= f.text_field :title %>
+</div>
+<div class="field">
   <%= f.label :info %><br>
   <%= f.text_field :info %>
 </div>

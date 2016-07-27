@@ -9,7 +9,7 @@
   </div>
 <div class="row" id="mainbottom">
   <div class="col-xs-12 col-sm-12 col-md-5">
-    <div class="container-fluid" style="margin-left: 50px;">
+    <div class="container-fluid" style="margin-left: 30px; width:400px;">
       <div class="page-header">
         <h3 id="timeline">My Journals</h3>
       </div>
@@ -18,12 +18,12 @@
         <li class="timeline-inverted">
           <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i>
           </div>
-          <div class="timeline-panel">
+          <div class="timeline-panel" style="width: 340px;">
             <div class="timeline-heading">
-              <h4 class="timeline-title"><strong>Title: </strong><%= link_to journal.name, show_journal_path(journal)  %></h4>
+              <h4 class="timeline-title"><strong><%= link_to journal.name, show_journal_path(journal)  %></strong></h4>
             </div>
             <div class="timeline-body">
-              <p>Created at: <%= journal.created_at %></p><br/>
+              <p><%= journal.created_at.to_date %></p><br/>
               <p>
                 <%= link_to "DELETE", destroy_journal_path(journal), method: :delete, data: { confirm: "Are you sure?"} %>
               </p>
@@ -36,8 +36,8 @@
   </div>
   <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="padding-right: 0px;">
     <div class="hovereffect">
-      <img class="img-responsive" src="http://placekitten.com/500/300" alt="">
-      something
+      <img class="img-responsive" src="http://cdn0.wideopenspaces.com/wp-content/uploads/2014/02/featured-owaa.jpg" alt="">
+      QUICK ADD A JOURNAL
         <div class="overlay">
           <h2></h2>
           <p class="text-center" style="font-size: 20px;">
@@ -46,20 +46,20 @@
         </div>
       </div>
       <ul class="caption-style-1">
-        <li> <img src="http://placekitten.com/304/383"  alt="">
+        <li> <img src="http://whytoread.com/wp-content/uploads/2015/03/best-books-book-youll-ever-read.jpg"  alt="" style="height: 383px; width: 304px;">
           <div class="caption">
             <div class="blur" style="height: 383px; width: 304px;"></div>
             <div class="caption-text">
-              <h1>Amazing Caption</h1>
-              <p>Whatever It Is - Always Awesome</p>
+              <h1 style="color: white;">Always stay on </h1>
+              <p>TRACK OF YOUR LIFE</p>
             </div>
           </div>
         </li>
       </ul>
     </div>
-    <div class="col-md-3" style="padding-left: 0px;">
+    <div class="col-md-3" style="padding-left: 20px;">
       <ul class="caption-style-1">
-        <li> <img src="http://placekitten.com/375/400"  alt="">
+        <li> <img src="https://s-media-cache-ak0.pinimg.com/564x/e1/2a/57/e12a5792e1f645488fb79d3b2416adfa.jpg"  alt="" style="height: 400px; width: 375px;">
           <div class="caption">
             <div class="blur" style="height: 400px; width: 375px;"></div>
             <div class="caption-text">
