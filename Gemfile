@@ -24,6 +24,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise', '~> 3.4.0'
 gem 'bootstrap-sass', '3.3.6'
 
+#Dragonfly uploading pictures
+gem 'dragonfly', '~> 1.0.12'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

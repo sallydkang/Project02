@@ -9,6 +9,7 @@
         </div>
         <% @post.each do |post| %>
     		<div class="pin">
+          <%= image_tag post.image.thumb('400x200#').url if post.image_stored? %>
     			<p>
             <h5 style= "margin-top: 0px;"><strong><%= post.title %> </strong> <strong style="font-size: 15px;"><%= post.updated_at.to_date %></strong></h5>
             <%= post.info %>

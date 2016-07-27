@@ -14,7 +14,7 @@ class PostController < ApplicationController
   end
 
   def create
-    @post = Post.new(params.require(:post).permit(:info, :journal_id, :title))
+    @post = Post.new(params.require(:post).permit(:info, :journal_id, :title, :image))
 
     if @post.save
       redirect_to show_journal_path(@post.journal_id)
@@ -26,7 +26,7 @@ class PostController < ApplicationController
   def update
     @post = Post.find(params[:id])
 
-    if @post.update_attributes(params.require(:post).permit(:info, :title))
+    if @post.update_attributes(params.require(:post).permit(:info, :title, :image))
       redirect_to show_journal_path(@post.journal_id)
     else
       render :edit

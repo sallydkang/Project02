@@ -9,6 +9,9 @@
   <%= f.label :info %><br>
   <%= f.text_field :info %>
 </div>
+<div class="field">  
+<%= f.file_field :image %>
+</div>
 <div class="field">
   <%= f.hidden_field :journal_id, :value => @journal_id%>
 </div>

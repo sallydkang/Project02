@@ -1,7 +1,11 @@
 class JournalController < ApplicationController
 before_action :authenticate_user!
   def index
-    @journal = Journal.where(user_id: current_user.id)
+    if params[:search]
+      @journal = Journal.where(user_id: current_user.id).search(params[:search]).order("created_at DESC")
+    else
+      @journal = Journal.where(user_id: current_user.id).order('created_at DESC')
+    end
     render layout: 'homepage'
   end
 
