@@ -1,70 +1,49 @@
-<!-- <div class="container-fluid">
-  <div class="row-fluid">
-    <div class="span2">
-      <img id="avatar" src="<%= asset_path( 'kitty.jpeg' ) %>"/>
-    </div>
-    <div class="span10">
-      sknasdn
-    </div>
-  </div>
-</div> -->
-<!-- <div class="row" id="maintop">
-  <div class="col-md-12">
-    <h3 class="text-center">Welcome</h3>
-    <div class="row" id="mainbottom">
-      <div class="col-md-2">
-        <img id="avatar" src="<%= asset_path( 'kitty.jpeg' ) %>"/>
-      </div>
-      <div class="col-md-10">
-        <%= link_to "Add a new Journal", new_journal_path %>
-      </div>
-    </div>
-  </div>
-</div> -->
-
 <div class="container-fluid">
   <header>
     <div class="row-fluid">
-      <div class="col-md-1 col-xs-3">
-        <h4 id="indextext">JOURNALS</h4>
+      <div class="col-md-2 col-xs-3">
+        <h4 id="indextext" style="margin-top: 25px; margin-left: -20px;"><i class="fa fa-pencil-square" aria-hidden="true"></i> JOURNALS</h4>
       </div>
         <div class="col-xs-2  col-xs-offset-5 col-md-offset-9  col-md-1" id="loginbutton">
-    <%= link_to "Log in", new_user_session_path %>
+          <%= link_to "Log in", new_user_session_path %>
         </div>
         <div class="col-xs-2 col-sm-2 col-md-1" id="registerbutton">
-    <%= link_to "Register", new_user_registration_path %>
+          <%= link_to "Register", new_user_registration_path %>
         </div>
-  </div>
+      </div>
   </header>
 </div>
 <div class="container-fluid" id="row3">
-<div class="row-fluid">
-<div class="col-md-2 frontbox">
-  <div class="hovereffect" style="background: none;">
-            <div class="overlay">
-                <h2></h2>
-				<p style="color: white;">
-
-				</p>
-            </div>
+  <div class="row-fluid">
+    <div class="col-md-2 frontbox" id="displaynonesmall">
+      <div class="hovereffect" style="background: none;">
+        <div class="overlay" style="padding: 20px;">
+          <h2 style="color: white; border-bottom: solid white 1px; margin-top: 0px;"><strong>START NOW</strong></h2>
+  				<p style="color: white; margin-left: 10px;">
+          <i class="fa fa-check-square-o" aria-hidden="true"></i>  Create your own online journals</br>
+          <i class="fa fa-check-square-o" aria-hidden="true"></i>  Stay organized </br>
+          <i class="fa fa-check-square-o" aria-hidden="true"></i>  Share your journals </br>
+          <i class="fa fa-check-square-o" aria-hidden="true"></i>  Absolutely free</br>
+          <p style="color: white; margin-left:40px; margin-top: -30px; font-size: 60px"><i class="fa fa-bookmark-o" aria-hidden="true"></i><p>
+        </div>
+      </div>
     </div>
-</div>
-<div class="col-md-7 frontbox">
-  <h1 class="text-center" style="color: white; font-size: 140px; margin-top: 130px; border: outset white 10px;">
-    JOURNALS
-  </h1>
-</div>
-<div class="col-md-2 frontbox">
-</div>
-</div>
+    <div class="col-md-7 frontbox">
+      <h1 class="text-center logo">
+        JOURNALS
+      </h1>
+    </div>
+    <div class="col-md-2 frontbox" id="displaynonesmall">
+    </div>
+  </div>
 </div>
 <div class="container-fluid">
-<div class="row-fluid">
-<div class="col-md-1">
-  <h5 id="twittericon"><a href="https://twitter.com/share"><i class="fa fa-twitter" aria-hidden="true"></i></a></h5>
-</div>
-<div class="col-md-1">
-  <h5 id="facebookicon"><a href="https://facebook.com/share"><i class="fa fa-facebook" aria-hidden="true"></i></a></h5>
-</div>
-</div>
-</div>
+  <div class="row-fluid">
+    <div class="col-md-1" id="displaynonesmall">
+      <h5 id="twittericon"><a href="https://twitter.com/share"><i class="fa fa-twitter" aria-hidden="true"></i></a></h5>
+    </div>
+    <div class="col-md-1" id="displaynonesmall">
+      <h5 id="facebookicon"><a href="https://facebook.com/share"><i class="fa fa-facebook" aria-hidden="true"></i></a></h5>
+    </div>
+  </div>
+  </div>

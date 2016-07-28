@@ -1,6 +1,12 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.logo{
+	color: white;
+	font-size: 140px;
+	margin-top: 130px;
+	border: outset white 8px;
+}
 
 #submitonpost{
 	margin-left: 880px;
@@ -14,12 +20,18 @@
 }
 
 @media screen and (max-width: 1000px){
+	.logo {
+		font-size: 100px;
+	}
+
 	.actioncolumn {
 		display: none;
 	}
+
 	.timelinesmall {
 		margin-left: -55px;
 	}
+
 	.infosize {
 		width: 420px;
 		height: 340px;
@@ -398,7 +410,7 @@ top: 100px;
 
 @media screen and (min-width: 1080px){
   #loginbutton {
-    margin-left: 74%;
+    margin-left: 65%;
   }
   #registerbutton {
     margin-left: 10px;
@@ -406,10 +418,10 @@ top: 100px;
 }
 
 .frontbox {
-  
-  height: 500px;
+  height: 325px;
   margin: 5px;
   margin-top: 0px;
+	margin-bottom: 200px;
 }
 
 #row3 {
