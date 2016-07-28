@@ -6,11 +6,13 @@ class PostController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    render layout: 'homepage'
   end
 
   def new
     @post = Post.new
     @journal_id = params[:journal_id]
+    render layout: 'homepage'
   end
 
   def create

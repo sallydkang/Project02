@@ -1,6 +1,7 @@
 class JournalController < ApplicationController
 before_action :authenticate_user!
   def index
+    @input = Journal.new
     if params[:search]
       @journal = Journal.where(user_id: current_user.id).search(params[:search]).order("created_at DESC")
     else
@@ -26,7 +27,7 @@ before_action :authenticate_user!
   end
 
   def create
-    @journal = Journal.new(params.require(:journal).permit(:name, :user_id))
+    @journal = Journal.new(params.require(:journal).permit(:name, :user_id, :image))
 
     if @journal.save
       redirect_to journal_path
@@ -38,7 +39,7 @@ before_action :authenticate_user!
   def update
     @journal = Journal.find(params[:id])
 
-    if @journal.update_attributes(params.require(:journal).permit(:name, :user_id))
+    if @journal.update_attributes(params.require(:journal).permit(:name, :user_id, :image))
       redirect_to journal_path
     else
       render :edit

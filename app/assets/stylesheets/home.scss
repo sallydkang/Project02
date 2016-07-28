@@ -2,7 +2,41 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-//journalshow page layout
+#submitonpost{
+	margin-left: 880px;
+	margin-bottom: 10px;
+}
+
+.infosize {
+	width: 940px;
+	height: 340px;
+	padding: 10px;
+}
+
+@media screen and (max-width: 1000px){
+	.actioncolumn {
+		display: none;
+	}
+	.timelinesmall {
+		margin-left: 60px;
+	}
+	.infosize {
+		width: 420px;
+		height: 340px;
+		padding: 10px;
+	}
+
+	#submitonpost{
+	margin-left: 350px;
+	margin-bottom: 10px;
+	}
+}
+
+#journalform {
+	background-color: rgba(204, 204, 204, 0.6);
+	width: 95%;
+	min-height: 500px;
+}
 
 #wrapper {
 	width: 90%;

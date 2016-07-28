@@ -1,15 +1,8 @@
 <div class="container-fluid">
-  <div class="row" id="maintop">
-    <div class="col-xs-6 col-sm-4 col-md-4" style="margin-top: 30px;">
-    </div>
-    <div class="col-md-2">
-      <h3 class="text-center" style="margin-left: 300px; margin-top: 50px;">ACTIONS</h3>
-    </div>
-  </div>
 <div class="row" id="mainbottom">
-  <div class="col-xs-12 col-sm-12 col-md-5">
-    <div class="container-fluid" style="margin-left: 30px; width:400px;">
-      <div class="page-header">
+  <div class="col-xs-12 col-sm-12 col-md-5 timelinesmall">
+    <div class="container-fluid" style="margin-left: 50px; width:400px;">
+      <div class="page-header" style="margin-top: 0px;">
         <h3 id="timeline">My Journals</h3>
       </div>
       <ul class="timeline">
@@ -19,7 +12,8 @@
           </div>
           <div class="timeline-panel" style="width: 340px;">
             <div class="timeline-heading">
-              <h4 class="timeline-title"><strong><%= link_to journal.name, show_journal_path(journal)  %></strong></h4>
+              <%= image_tag journal.image.thumb('300x150#').url if journal.image_stored? %>
+              <h4 class="timeline-title" style="margin-top: 10px;"><strong><%= link_to journal.name, show_journal_path(journal) %></strong></h4>
             </div>
             <div class="timeline-body">
               <p><%= journal.created_at.to_date %></p><br/>
@@ -33,14 +27,16 @@
     </ul>
     </div>
   </div>
-  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="padding-right: 0px;">
+  <div class="fixedposition1">
+  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 actioncolumn" style="padding-right: 0px; position: fixed; left: 530px; top: 20px;">
+    <h3>ACTIONS</h3>
     <div class="hovereffect">
       <img class="img-responsive" src="http://cdn0.wideopenspaces.com/wp-content/uploads/2014/02/featured-owaa.jpg" alt="">
       QUICK ADD A JOURNAL
         <div class="overlay">
           <h2></h2>
           <p class="text-center" style="font-size: 20px;">
-            <a href="/journal/new"><strong>Add new journal!</strong></a>
+            something
           </p>
         </div>
       </div>
@@ -49,21 +45,23 @@
           <div class="caption">
             <div class="blur" style="height: 383px; width: 304px;"></div>
             <div class="caption-text">
-              <h1 style="color: white;">Always stay on </h1>
-              <p>TRACK OF YOUR LIFE</p>
+              <h1 style="color: white;">Need to write? </h1>
+              <p><a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#basicModal">Add new Journal</a></p>
             </div>
           </div>
         </li>
       </ul>
     </div>
-    <div class="col-md-3" style="padding-left: 20px;">
+  </div>
+  <div class="fixedposition2">
+    <div class="col-md-3" style="padding-left: 20px; position: fixed; left: 850px; top: 80px;">
       <ul class="caption-style-1">
         <li> <img src="https://s-media-cache-ak0.pinimg.com/564x/e1/2a/57/e12a5792e1f645488fb79d3b2416adfa.jpg"  alt="" style="height: 400px; width: 375px;">
           <div class="caption">
             <div class="blur" style="height: 400px; width: 375px;"></div>
             <div class="caption-text">
               <h1>Amazing Caption</h1>
-              <p>Whatever It Is - Always Awesome</p>
+              <p></p>
             </div>
           </div>
         </li>
@@ -81,4 +79,27 @@
       </ul>
     </div>
   </div>
+  </div>
 </div>
+
+
+<%= form_for(@input, url: '/journal') do |f| %>
+<div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h2 class="modal-title" id="myModalLabel">Name: <%= f.text_field :name, class: "form-control", autofocus: true, autocomplete: "off" %></h2>
+      </div>
+      <div class="modal-body">
+        <h5><%= f.file_field :image %></h5>
+      </div>
+      <%= f.hidden_field :user_id, :value => current_user.id %>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <%= f.submit "submit!", class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

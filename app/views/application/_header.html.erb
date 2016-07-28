@@ -32,8 +32,8 @@
             </a>
           </li>
         </ul>
-        <%= form_tag(journal_path, :method => "get", id: "search-form", class: "navbar-form navbar-left") do %>
-          <%= text_field_tag :search, params[:search], placeholder: "Search Journal", class: "form-control" %>
+        <%= form_tag(journal_path, :method => "get", id: "search-form", class: "navbar-form navbar-left", autocomplete: "off") do %>
+          <%= text_field_tag :search, params[:search], placeholder: "Search Journal", class: "form-control", autocomplete: "off" %>
           <%= submit_tag "Search", class: "btn btn-default" %>
           <% end %>
         <ul class="nav navbar-nav navbar-right">
