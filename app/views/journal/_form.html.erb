@@ -23,7 +23,8 @@
   <div class="field">
     <%= f.hidden_field :user_id, :value => current_user.id %>
   </div>
-  <div class="actions" style="margin-left: 100px;">
+  <div class="actions" style="margin-left: 80px;">
+    <p style="float: left; margin-right: 5px;">public:<p> <%= f.check_box :public, :value => true %>
     <%= f.submit "submit!" %>
   </div>
 </div>

@@ -1,0 +1,13 @@
+<h1>Public Journals</h1>
+    <div id="wrapper">
+    	<div id="columns">
+        <% @public.each do |p| %>
+    		<div class="pin">
+          <%= image_tag p.image.thumb('400x200#').url if p.image_stored? %>
+    			<p>
+            <h5 style= "margin-top: 0px;"><strong><%= link_to p.name, show_journal_path(p.id) %> </strong></a>  <strong style="font-size: 15px;"><%= p.created_at.to_date %></strong></h5>
+    			</p>
+    		</div>
+        <%end%>
+      </div>
+    </div>

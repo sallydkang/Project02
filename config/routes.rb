@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   get '/journal/new' => 'journal#new', as: :new_journal
 
+  get '/journal/public' => 'journal#public', as: :public_journal
+
   get '/journal/:id/edit' => 'journal#edit', as: :edit_journal
 
   get '/journal/:id' => 'journal#show', as: :show_journal

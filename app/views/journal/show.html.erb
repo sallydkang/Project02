@@ -4,7 +4,9 @@
         <div class="pin">
           <%= image_tag @journal.image.thumb('400x200#').url if @journal.image_stored? %>
           <p>
+            <% if @journal.user_id == current_user.id %>
             <i class="fa fa-pencil-square-o" aria-hidden="true" ></i><%= link_to "Add to your journal", new_post_path(@journal) %>
+            <%end%>
           </p>
         </div>
         <% @post.each do |post| %>
@@ -13,9 +15,10 @@
     			<p>
             <h5 style= "margin-top: 0px;"><strong><%= post.title %> </strong> <strong style="font-size: 15px;"><%= post.updated_at.to_date %></strong></h5>
             <%= post.info %>
-
+            <% if @journal.user_id == current_user.id %>
             <%= link_to "Edit", edit_post_path(post) %>
             <%= link_to "DELETE", destroy_post_path(post), method: :delete, data: { confirm: "Are you sure?"} %>
+            <% end %>
     			</p>
     		</div>
         <%end%>

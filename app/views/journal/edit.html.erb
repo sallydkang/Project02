@@ -22,6 +22,7 @@
 <div class="col-md-1" style="margin-left: 340px; margin-top: 5px;">
   <%= f.file_field :image %>
   <div class="actions" style="margin-left: 100px;">
+    <p style="float: left; margin-right: 5px;">public:<p> <%= f.check_box :public, :value => true %>
     <%= f.submit "submit!" %>
   </div>
 </div>
