@@ -1,6 +1,8 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
 .logo{
 	color: white;
 	font-size: 140px;
@@ -22,6 +24,11 @@
 @media screen and (max-width: 1000px){
 	.logo {
 		font-size: 100px;
+		margin-left: -70px;
+	}
+
+	.forsmallmargin {
+		margin-left: -15px !important;
 	}
 
 	.actioncolumn {
@@ -41,6 +48,9 @@
 	#submitonpost{
 	margin-left: 350px;
 	margin-bottom: 10px;
+	}
+	#timeline{
+		margin-left: 50px;
 	}
 }
 
