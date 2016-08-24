@@ -29,6 +29,16 @@ Webpage layout:
 - Forms for adding and updating posts/journals 
 
 -----
+Website populated:
+
+This is the front page, navbar is not shown but you can search through all your journals. This is an example of one journal with a cover picture ---> 
+
+![alt text](https://i.imgur.com/vUoKJai.jpg)
+
+This is the journal page with pictures and journal information. The journal info boxes fit by column, making it look neat and easy to read. (if you hover over the info box the box color changes to a darker navy color so it's easier to read) --->
+
+![alt text](https://i.imgur.com/G2yjzYG.jpg)
+
 #User Stories 
 -----
 ##As a User I want to :

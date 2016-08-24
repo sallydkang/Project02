@@ -1,34 +1,33 @@
 <div class="container-fluid" id="journalform">
-<%= form_for(@journal, url: '/journal') do |f| %>
-<div class="row">
-<div class="field">
-    <div class="col-xs-2 col-md-1">
-      <h2 style="margin-left: 20px;">Name:<h2>
+  <%= form_for(@journal, url: '/journal') do |f| %>
+  <div class="row">
+    <div class="field">
+      <div class="col-xs-2 col-md-1">
+        <h2 style="margin-left: 20px;">Name:</h2>
+      </div>
+      <div class="col-xs-9 col-md-4">
+        <h2 style="margin-left: 70px; margin-top: 30px;"><%= f.text_field :name, class: "form-control", autofocus: true, autocomplete: "off" %></h2>
+      </div>
     </div>
-    <div class="col-xs-9 col-md-4">
-      <h2 style="margin-left: 70px; margin-top: 30px;"><%= f.text_field :name, class: "form-control", autofocus: true, autocomplete: "off" %></h2>
-    </div>
-</div>
-</div>
-<div class="row">
-<div class="col-md-7">
-  <h4>Add your own cover picture!</h4>
-  <h4 style="float: left;">Example:</h4>
-  <img src="http://i.imgur.com/N57Avyy.png" style="height: 280px; width: 400px; margin-left: 10px; margin-top: 15px;">
-</div>
-</div>
-<div class="row">
-<div class="col-md-1" style="margin-left: 340px; margin-top: 5px;">
-  <%= f.file_field :image %>
-  <div class="field">
-    <%= f.hidden_field :user_id, :value => current_user.id %>
   </div>
-  <div class="actions" style="margin-left: 80px;">
-    <p style="float: left; margin-right: 5px;">public:<p> <%= f.check_box :public, :value => true %>
-    <%= f.submit "submit!" %>
+<div class="row">
+  <div class="col-md-7">
+    <h4>Add your own cover picture!</h4>
+    <h4 style="float: left;">Example:</h4>
+    <img src="http://i.imgur.com/N57Avyy.png" style="height: 280px; width: 400px; margin-left: 10px; margin-top: 15px;">
   </div>
 </div>
+<div class="row">
+  <div class="col-md-1" style="margin-left: 340px; margin-top: 5px;">
+    <%= f.file_field :image %>
+    <div class="field">
+      <%= f.hidden_field :user_id, :value => current_user.id %>
+    </div>
+    <div class="actions" style="margin-left: 80px;">
+      <p style="float: left; margin-right: 5px;">public:</p> <%= f.check_box :public, :value => true %>
+        <%= f.submit "submit!" %>
+    </div>
+  </div>
 </div>
 </div>
 <% end %>
-</div>
